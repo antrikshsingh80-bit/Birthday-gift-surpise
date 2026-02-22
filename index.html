@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Veni ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background: radial-gradient(circle at top, #ffb6c1, #ff69b4, #ff1493);
+    height:100vh;
+    color:white;
+    perspective:1200px;
+}
+
+/* ---------- BACKGROUND FALLING PETALS ---------- */
+.petal{
+    position:fixed;
+    top:-10%;
+    width:20px;
+    height:20px;
+    background:rgba(255,182,193,0.8);
+    border-radius:50%;
+    animation:fall linear infinite;
+}
+@keyframes fall{
+    to{
+        transform:translateY(120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ---------- FADED LOVE LINE ---------- */
+.faded-text{
+    position:fixed;
+    bottom:10%;
+    right:10%;
+    font-family:cursive;
+    font-size:18px;
+    opacity:0.25;
+    animation:floatText 6s ease-in-out infinite;
+}
+@keyframes floatText{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+/* ---------- INTRO SCREEN ---------- */
+#intro{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    z-index:50;
+    text-align:center;
+}
+
+#intro h1{
+    font-size:2.2rem;
+    animation:pop 1.2s ease forwards;
+}
+@keyframes pop{
+    from{transform:scale(0);opacity:0}
+    to{transform:scale(1);opacity:1}
+}
+
+#typing{
+    margin-top:15px;
+    font-size:1rem;
+    max-width:85%;
+    min-height:90px;
+}
+
+/* ---------- GIFT ---------- */
+#giftBox{
+    width:160px;
+    height:160px;
+    background:linear-gradient(135deg,#ff4f81,#ff9aa2);
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    margin-top:25px;
+    animation:breath 2s infinite;
+}
+@keyframes breath{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.07)}
+}
+
+/* ---------- MAIN PAGE ---------- */
+#main{
+    position:absolute;
+    inset:0;
+    display:none;
+    padding:15px;
+    transform-style:preserve-3d;
+}
+
+/* ---------- ICONS ---------- */
+.icon-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:80px;
+}
+
+.icon{
+    height:130px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.2);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    backdrop-filter:blur(10px);
+    animation:breath 3s infinite;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.icon span{
+    margin-top:10px;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* ---------- BACK BUTTON ---------- */
+.back{
+    position:fixed;
+    top:15px;
+    left:15px;
+    font-size:24px;
+    z-index:100;
+    display:none;
+}
+
+/* ---------- PAGES ---------- */
+.page{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    display:none;
+    overflow-y:auto;
+    padding:20px;
+    border-radius:20px;
+}
+
+/* ---------- WHEEL ---------- */
+#wheel{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    margin:50px auto;
+    border:8px solid white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:swing 3s infinite;
+}
+@keyframes swing{
+    0%,100%{transform:rotate(-2deg)}
+    50%{transform:rotate(2deg)}
+}
+
+#spinBtn{
+    background:white;
+    color:#ff1493;
+    padding:15px;
+    border-radius:50%;
+    font-weight:bold;
+}
+
+/* ---------- BORDER ---------- */
+body::before{
+    content:'';
+    position:fixed;
+    inset:8px;
+    border:2px solid rgba(255,255,255,0.6);
+    border-radius:25px;
+    pointer-events:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="faded-text">Antriksh and Veni together forever</div>
+
+<!-- INTRO -->
+<div id="intro">
+    <h1>Happy birthday my veni 🎂❤️</h1>
+    <div id="typing"></div>
+    <div id="giftBox">🎁 Tap to open</div>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+    <div class="icon-grid">
+        <div class="icon" onclick="openMemories()">❤️<span>Our Memories</span></div>
+        <div class="icon" onclick="openMessage()">💌<span>Message</span></div>
+        <div class="icon" onclick="openWheel()">🎡<span>Spin Wheel</span></div>
+    </div>
+</div>
+
+<!-- MEMORIES -->
+<div id="memories" class="page">
+<p>
+Me - Tumse ak baat kahani thi, aaj tumhara mood accha laga to bol deta hu🥺🥺. I think I am falling in love with you,🥺I love you veni, tum mujhe acchi lagti ho🥺🥺🥺🥺🥺,mai abhi tak life me jisase bhi mila hu sabse achhi tum ho🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺🥺
+
+<br><br>She - Prank h kya ye ???
+
+<br><br>Me- nahi 
+
+<br><br>She - I like you too😶
+
+<br><br>Me - Really ?
+
+<br><br>She - hm😳
+
+<br><br>Me - 🥺sach me viswash nahi ho raha
+
+<br><br>She - Padhlo baad m baat krege
+
+<br><br>Me- Ok bye👋
+
+<br><br>She - bye 
+
+<br><br>( Next day )
+
+<br><br>Me - Tumse ak baat kahana tha -
+Parso ya fır kal mai confuse tha ki tumhe acche se pasand karta hu ya fır nahi, pasand to karta tha but confuse tha thoda, but Aaj Mai socha bahot ki iit me jaane ke baad bhi bahot kam percent hota hai love marriage ka aur mujhe bilkul arrange marriage saadi nahi pasand, aaj sir bhi 26:50 pe bole ki koi accha mile to use kabhi chhordana mat, ab mai 100% se kahana chahata hu that, I love you veni❤️,sacche dil se I love you🥺🥺, mai tumhe bilkul nahi khona chahata, tum bahot acchi ho, ab bilkul confuse nahi hu
+
+<br><br>She - i love you too😶😅
+
+<br><br>She - Sach bolu toh mujhe Igta tha ki tum mujhe like ya love ni krte sirf attracted ho aur fir jb hmari baat Hui toh mujhe ye bhi Iga ki tumhe Igta h m achhi ladki ni hu gaaliya deti hu jooth bolti aur bilkul loyal ni hu😅😅par aaj subah jb hmari baat Hui toh Iga shayad glt soch ri thi fir ab tumne dubara propose kiya toh bht achha Iga sachme😅😅*I love you*💗💕
+
+<br><br>Me - 😊😊😊😊❤️❤️❤️I love you tooooooo !!!!
+</p>
+</div>
+
+<!-- MESSAGE -->
+<div id="message" class="page">
+<p>
+Happy birthday meri jaaaan , bhagwan tumhe hamesha khush rakhe , tum hamesha khush raha karo meri jaan, kabhi sad mat hua karo , jab accha na lage na mere pass aa gaya karo mai tumhara hamesha sath dunga🧿🧿🧿, aaj meri jaan 18 years ki ho gai 🥰🥰🥰🥰🥰, i love you so much my veni ❤️❤️, tum mere liye sab kuchh ho , puri duniya me tum sabse acchi ho , mai tumse bahot pyar karta hu aur puri life tumhara sath nibhaunga , tumse accha is duniya me koi ni hoga , you are the best meri veni , har pal mere sath khadi rahati ho , i love you sooooo muchhhhhhh my sweet heart🥰🥰🥰🥰🥰 , ham hamesha sath rahenge , duniya ki koi takat hamare bich nahi aa sakti , tum bahooot bahooooooot acchi hooooooo meri jaaan ❤️❤️❤️❤️❤️❤️🧿🧿🧿, tumhare bina ye duniya mere liye adhuri hai , tum hasti ho na toh tumhare smile se apne aap mere chahare par smile aa jata hai❤️❤️❤️, tum vo ho jo mujhe hamesha khush rakhati ho , i love youu the most meri jaaaaannnnnnn , you are greatest of all the things or people living in this world 🥰🥰🥰🥰🥰🥰🥰, my princess tumse sundar is duniya me koi nahi hai , sachme chand bhi sarma jayega tumhari sundarta ko dekhkar , har photo me chamakti rahati ho , mujhe koi aur dikhata hi nahi , sirf tum aur tum hi dikhati, you aree cutest in the world ❤️🥰🥰🥰🧿🧿🧿🧿🧿 touch wood 🧿🧿🧿, tumhe kisi ki nazar na lage 🥰🥰 meri love , you are my life , i love you sooo muchhhhhhhhh🥰🥰🥰🥰🥰, ham hamesha sath rahenge🧿🧿🧿, mai sirf tumhara hu aur hamesha tumhara rahunga 🥰🥰🥰.
+<br><br>~ Your Antriksh
+</p>
+</div>
+
+<!-- WHEEL PAGE -->
+<div id="wheelPage" class="page">
+<div id="wheel">
+    <div id="spinBtn" onclick="spin()">Spin Me</div>
+</div>
+<h2 id="result" style="text-align:center;"></h2>
+</div>
+
+<div class="back" onclick="goBack()">⬅</div>
+
+<audio id="voice" src="https://assets.mixkit.co/sfx/preview/mixkit-happy-birthday-song-110.mp3"></audio>
+<audio id="tap" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+
+<script>
+const text="My girl, always keep a smile on your face , you look so much more beautiful with cute smile , wishing you a lifetime of happiness from this day forward";
+let i=0;
+setInterval(()=>{if(i<text.length){typing.innerHTML+=text[i++]}},50);
+
+giftBox.onclick=()=>{
+    voice.play();
+    intro.style.display="none";
+    main.style.display="block";
+}
+
+function openMemories(){openPage(memories)}
+function openMessage(){openPage(message)}
+function openWheel(){openPage(wheelPage)}
+
+function openPage(p){
+    tap.play();
+    main.style.display="none";
+    p.style.display="block";
+    document.querySelector('.back').style.display="block";
+}
+
+function goBack(){
+    tap.play();
+    document.querySelectorAll('.page').forEach(p=>p.style.display="none");
+    main.style.display="block";
+    document.querySelector('.back').style.display="none";
+}
+
+const options=[
+"kiss him","hug him","tell him something about yourself",
+"he has to do whatever you want","you have to do whatever he want",
+"go and study","write his name on any copy"
+];
+
+function spin(){
+    let choice=options[Math.floor(Math.random()*options.length)];
+    result.innerHTML="💖 "+choice;
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Birthday Music</title>
+</head>
+<body onclick="playMusic()">
+
+<audio id="music" src="Happy Birthday Song!!! - Happy Birthday.mp3"></audio>
+
+<script>
+function playMusic() {
+  document.getElementById("music").play();
+}
+</script>
+
+<h2>Click anywhere to play birthday music 🎵</h2>
+
+</body>
+</html>
+
+<! DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Background Image</title>
+<style>
+body{
+    background-image: url("birthday.jpeg");
+    background-size: cover;        /* Makes image full screen */
+    background-repeat: no-repeat;  /* Prevents repeating */
+    background-position: center;   /* Keeps image centered */
+    height: 100vh;                 /* Full screen height */
+    margin: 0;                     /* Removes default spacing */
+}
+</style>
+</head>
+<body>
+
